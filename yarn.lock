@@ -346,10 +346,10 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-nostr-tools@^1.6.0:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/nostr-tools/-/nostr-tools-1.7.1.tgz#e642f368c49b6e8a004af61e9a855e32f9653050"
-  integrity sha512-r72KpbLVz6Gaqei6LIj6m+cyp24eF3myiIMlmv93WCgDFCI5w72u+OrZzjSrJaeE94vYoEJfOF16/2Rl5o5z5w==
+nostr-tools@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/nostr-tools/-/nostr-tools-1.7.5.tgz#349f469ff2877deb99d71c63d4883af93ec9f9a5"
+  integrity sha512-FFaYOAn9lFyISClbBzPe2eQ2ZiKx8xFviwHmdgTAmuue+eLrtPEI3tCqPtP624HghX/X4VnaixoiMvDB8g2+tQ==
   dependencies:
     "@noble/hashes" "1.0.0"
     "@noble/secp256k1" "^1.7.1"

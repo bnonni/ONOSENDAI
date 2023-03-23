@@ -6,7 +6,7 @@ import { colors, whiteMaterial, expandedCubeMaterial, expandedBookmarkedCubeMate
 import { noteGeometry } from './geometry'
 import reticleImage from './reticle-mouse.png'
 import logoImage from './logo-cropped.png'
-
+import {nip19} from 'nostr-tools'
 import { wrapText } from './wraptext'
 
 // we downscale the coordinates:
@@ -52,6 +52,13 @@ let selected
  * Indexes a user's event id's by the user's pubkey. Used to connect note nodes.
  */
 let pubkeys
+
+/**
+ * metadata = {<pubkey>: {<metadata>}, ...}
+ * * not persisted
+ * 
+ */
+let metadata
 
 /**
  * loadedEvents = {<event id>: event, ...} 
@@ -658,7 +665,9 @@ function showThread(event){
 }
 
 function augUIModal(event,mesh) {
-    let message = `event:${event.id}\n\n${event.content}\n\npubkey:${event.pubkey.trim()}\n\n[${mesh.position.x}x]\n[${mesh.position.y}y]\n[${mesh.position.z}z]`
+    const pk = event.pubkey.trim()
+    let npub = nip19.npubEncode(pk)
+    let message = `event:${event.id}\n\n${event.content}\n\n${npub}\n\n[${mesh.position.x}x]\n[${mesh.position.y}y]\n[${mesh.position.z}z]`
     teardownAugUIModal()
     modal = document.createElement('div')
     modal.classList.add('dom-ui')
@@ -792,6 +801,17 @@ export const visualizeNote = (event,coords) => {
     universe.add(noteMesh)
 }
 
+export const findNotes = (event) => {
+    console.log('findNotes', event)
+    console.log(loadedEvents)
+}
+
 export function getEventsList() {
     return Object.keys(loadedEvents).length
+}
+
+export function findNIP05() {
+    loadedEvents.filter(e => {
+        
+    })
 }

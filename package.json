@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "augmented-ui": "^2.0.0",
-    "nostr-tools": "^1.6.0",
+    "nostr-tools": "^1.7.5",
     "three": "^0.150.0"
   },
   "devDependencies": {
